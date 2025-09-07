@@ -29,4 +29,43 @@ void main(List<String> arguments) {
   //   stdout.writeln("Jenis kelamin saya Perempuan");
   // }
   stdout.writeln("Alamat saya $alamat");
+  num nilai = 100; // bisa diisi int atau double
+  stdout.writeln("Nilai saya $nilai");
+  dynamic bebas = true; // bisa diisi semua tipe data
+  stdout.writeln("Nilai dari dynamic adalah $bebas");
+
+  // String angka1 = "15";
+  // int angka2 = int.parse(angka1);
+  // int angka3 = bebas;
+
+  // list
+  List<String> hobby = ['Tidur', 'Masak', 'Ngoding'];
+  hobby.add('Main Game');
+  stdout.writeln("Hobby saya: $hobby");
+
+  // map
+  Map<String, String> biodata = {
+    "nama": "Gizela",
+    "alamat": "Malang",
+    "jenis_kelamin": "Perempuan",
+  };
+  biodata['pekerjaan'] = "Mahasiswi";
+  biodata.addAll({"hobi": "Siwil"});
+
+  stdout.writeln("Biodata : $biodata");
+  stdout.writeln("Nama yang ada di data ${biodata['nama']}");
+
+  try {
+  // Code that might throw an exception
+  int result = 10 ~/ 0; // This will throw an IntegerDivisionByZeroException
+  } on IntegerDivisionByZeroException {
+  // Handles the specific IntegerDivisionByZeroException
+  print("Cannot divide by zero!");
+  } catch (e) {
+  // Handles any other type of exception and provides the exception object
+  print("An unexpected error occurred: $e");
+  } finally {
+  // Code that always executes, regardless of whether an exception occurred 
+  print("Execution complete.");
+  }
 }
